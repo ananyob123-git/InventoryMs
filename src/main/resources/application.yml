@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: InventoryMs   # Name of your microservice
+  config:
+    import: configserver:http://localhost:8888   # URL of your Config Server
+  profiles:
+    active: dev
+  cloud:
+    config:
+      retry:
+        max-attempts: 6       # Optional, for retry mechanism if config server is down
+        max-interval: 2000  # Optional, retry interval
+server:
+  port: 8082
+logging:
+  file: C:\Users\logs\elk-stack.log
